@@ -5,10 +5,10 @@ import cors from "cors";
 import dorenv from "dotenv";
 import helmet from "helmet";
 import morgan from "morgan";
-import clientRoutes from "routes/client.js"
-import generalRoutes from "routes/general.js"
-import managementRoutes from "routes/management.js"
-import salesRoutes from "routes/sales.js"
+import clientRoutes from "./Routes/client.js"
+import generalRoutes from "./Routes/general.js"
+import managementRoutes from "./Routes/management.js"
+import salesRoutes from "./Routes/sales.js"
 
 //config
 
@@ -19,10 +19,20 @@ app.use(helmet());
 app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin"}));
 app.use(morgan("common"));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 
 app.use("/client", clientRoutes);
-app.use("/general",generalRoutes);
-app.use("/management",managementRoutes);
-app.use("/sales",salesRoutes);
+app.use("/general", generalRoutes);
+app.use("/management", managementRoutes);
+app.use("/sales", salesRoutes);
+
+//mongoose setup
+
+const PORT = process.env.PORT || 9000;
+mongoose.connect(process.env.MONGO_URL, {
+    useNewUrlParser: true, //optional parameters after MongoDB 3.5
+    useUnifiedTopology: true,
+}).then(()=>{
+    app.listen(PORT, () => console.log(`Server Port: ${PORT}`))
+}).catch((error) => console.log(`${error}: didn't connect`))
