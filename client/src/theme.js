@@ -15,7 +15,7 @@ export const tokensDark = {
       900: "#141414",
       1000: "#000000", // manually adjusted
     },
-    primary: {
+    primary_blue: {
       // blue
       100: "#d3d4de",
       200: "#a6a9be",
@@ -27,7 +27,18 @@ export const tokensDark = {
       800: "#0d1025",
       900: "#070812",
     },
-    secondary: {
+    primary:{
+      100: "#ffe6cc",
+      200: "#ffcc99",
+      300: "#ffb366",
+      400: "#ff9933",
+      500: "#ff8000",
+      600: "#cc6600",
+      700: "#994d00",
+      800: "#663300",
+      900: "#331a00"
+    },
+    secondary_yellow: {
       // yellow
       50: "#f0f0f0", // manually adjusted
       100: "#fff6e0",
@@ -40,6 +51,20 @@ export const tokensDark = {
       800: "#665429",
       900: "#332a14",
     },
+
+    secondary: {
+          50: "#eff5ef",
+          100: "#d6f5d6",
+          200: "#adebad",
+          300: "#84e184",
+          400: "#5bd75b",
+          500: "#32cd32",
+          600: "#28a428",
+          700: "#1e7b1e",
+          800: "#145214",
+          900: "#0a290a"
+},
+
   };
   
   // function that reverses the color palette
