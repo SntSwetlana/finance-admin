@@ -3,12 +3,12 @@ import {
     Box, useTheme
 } from "@mui/material";
 import Header from "components/Header";
-import  { DataGrid } from "@mui/x-data-grid";
+import { DataGrid } from "@mui/x-data-grid";
 import { useGetCustomersQuery } from 'state/api';
 
 const Customers = () => {
     const theme = useTheme();
-    const {data, isLoading} = useGetCustomersQuery();
+    const { data, isLoading } = useGetCustomersQuery();
     const columns = [
         {
             field: "_id",
