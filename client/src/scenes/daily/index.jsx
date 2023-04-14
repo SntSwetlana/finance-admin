@@ -6,7 +6,6 @@ import DatePicker from 'react-datepicker';
 import { ResponsiveLine } from '@nivo/line'
 
 import "react-datepicker/dist/react-datepicker.css";
-import { breakpoints } from '@mui/system';
 
 const Daily = () => {
   const [startDate, setStartDate] = useState(new Date("2021-02-01"));
