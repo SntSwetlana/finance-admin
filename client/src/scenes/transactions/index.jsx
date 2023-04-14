@@ -11,7 +11,7 @@ import  DataGridCustomToolbar from "components/DataGridCustomToolbar"
 const Transactions = () => {
     const theme = useTheme();
     const [page, setPage] = useState(0);
-    const [pageSize, setPageSize] = useState(500);
+    const [pageSize, setPageSize] = useState(20);
     const [sort, setSort] = useState({});
     const [search, setSearch] = useState("");
 
@@ -22,9 +22,6 @@ const Transactions = () => {
         sort: JSON.stringify(sort),
         search,
     });
-    console.log("🚀 ~ file: index.jsx:24 ~ Transactions ~ data:", data)
-
-    
 
     const columns = [
       {
